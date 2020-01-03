@@ -1,5 +1,6 @@
 import React from 'react';
 import {Navbar,Form,Button,Nav} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 
 export default class PNav extends React.Component{
 
@@ -21,7 +22,9 @@ export default class PNav extends React.Component{
                             <Nav.Link href="#link">Testimonials </Nav.Link>
                         </Nav>
                         <Form inline>
+                        <Link to ={"/signup"}>
                             <Button className = "bg-primary text-white text-center" >Sign Up!</Button>
+                        </Link>
                         </Form>
                      </Navbar.Collapse>
               </Navbar>
