@@ -6,9 +6,9 @@ export default class MainPageImage extends React.Component{
 render() {
     return(
         <div>
-           <Image 
-                    src ={img1}
-                   width="100%"
+           <Image
+           src ={img1}
+            width="100%"
                     height = "400"
                   
                     />

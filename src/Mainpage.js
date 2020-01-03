@@ -2,9 +2,6 @@ import React from 'react';
 import MainPageImage from './components/MainPageImage';
 import PNav from './components/PNav';
 import SearchInput from './components/SearchInput';
-import { Container } from 'react-bootstrap';
-
-
 
 export default class MainPage extends React.Component{
   render() {
