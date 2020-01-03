@@ -1,52 +1,47 @@
 import React ,{useState} from 'react';
 import './Loginstyle.css';
 import AuthSuccess from './AuthSuccess';
-import {Link} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 
 
 
-function Login (){
-
-    const [phn, setPhn] = useState();
+function Login(){
+    const [phone, setPhone] = useState();
+    const history =useHistory();
 
     function handleChange(event){
-        console.log(event.target.value)
-        return setPhn(event.target.value);
-
+        setPhone(event.target.value);
     }
 
     function handleClick(){
-        return (
-                <AuthSuccess name = {phn}/>
-        );
+        history.push(`/login/authsuccess/:${phone}`);
     }
+    return (
+        <div className="body"> 
         
-        return (
-            <div className="body"> 
-          
-            <form className="container">  
+        <form className="container"> 
+            <h4 className = "text-center" >Phone :{phone}</h4>
                     <input 
                         className= "input" 
-                        type="number" 
-                        placeholder= "Phone number" 
+                        type= "number"  
+                        placeholder ="phone number"
                         onChange={handleChange}
-                        value={phn}
+                        value={phone}
+                        phonenumber={phone}
                     />
-                    <input 
-                        className= "input" 
-                        type= "password"  
-                        placeholder ="Password" 
-
-                        />
-                    <button
-                    className="button" 
-                    onClick={handleClick} 
-                    >Login</button>
-            </form>
-           
-            </div>
-        );
-    }
+                <input 
+                    className= "input" 
+                    type= "password"  
+                    placeholder ="Password"
+                    />
+                <button
+                className="button" 
+                onClick={handleClick} 
+                >Login</button>
+        </form>
+        </div>
+    );
+}
 
 
 

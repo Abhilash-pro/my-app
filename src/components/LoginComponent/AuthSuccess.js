@@ -1,11 +1,10 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import { render } from '@testing-library/react';
-
-function AuthSuccess (props){
+import {useParams} from 'react-router-dom';
+function AuthSuccess(props){
+    console.log(props.match.params.id)
     return (
         <div className="bg-primary text-center">
-            <h1>{props.name}</h1>
+            <h1>Hello {props.match.params.id}</h1>
         </div>
     );
 }
