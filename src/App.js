@@ -14,7 +14,7 @@ render(){
       <Switch>
       <Route exact path="/" component={Mainpage} />
       <Route exact path="/login" component={Login} />
-      <Route excat path="/login/authsuccess/:id" component={AuthSuccess} />
+      <Route  path="/login/authsuccess/:id" component={AuthSuccess} />
       {/* <Route path="/" component={Mainpage} />
       <Route path="/" component={Mainpage} />
       <Route path="/" component={Mainpage} />     */}

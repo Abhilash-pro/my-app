@@ -1,21 +1,28 @@
 import React ,{useState} from 'react';
 import './Loginstyle.css';
-import AuthSuccess from './AuthSuccess';
 import {useHistory} from 'react-router-dom';
 
 
 
 function Login(){
+
     const [phone, setPhone] = useState();
+    const [pwd,setPwd] =useState();
+
     const history =useHistory();
 
     function handleChange(event){
         setPhone(event.target.value);
     }
+    
+    function handlePwdChange(event){
+        setPwd(event.target.value);
+    }
 
     function handleClick(){
         history.push(`/login/authsuccess/:${phone}`);
     }
+
     return (
         <div className="body"> 
         
@@ -33,6 +40,8 @@ function Login(){
                     className= "input" 
                     type= "password"  
                     placeholder ="Password"
+                    onChange={handlePwdChange}
+                    value={pwd}
                     />
                 <button
                 className="button" 
